@@ -19,7 +19,9 @@ const Examples = ({ error, children, size, list = [], addToList }) => {
         </ul>
       )}
       <input value={value} onChange={handleInputChange} type="text" />
-      <button onClick={addElement}>Click!</button>
+      <button type="button" onClick={addElement}>
+        Click!
+      </button>
     </>
   );
 };
