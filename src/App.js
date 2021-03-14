@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import defaultTheme from './config/theme/default';
 import './App.css';
 import Examples from './examples';
 
@@ -14,9 +16,11 @@ function App() {
     addToList,
   };
   return (
-    <div className="App">
-      <Examples {...exampleProps}>Example One</Examples>
-    </div>
+    <StyledThemeProvider theme={defaultTheme}>
+      <div className="App">
+        <Examples {...exampleProps}>Example One</Examples>
+      </div>
+    </StyledThemeProvider>
   );
 }
 
