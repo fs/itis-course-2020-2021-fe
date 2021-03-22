@@ -15,6 +15,11 @@ const StyledInput = styled.input`
   }
 `;
 
-const Input = ({ ...props }) => <StyledInput {...props} />;
+const Input = ({ onChange, ...props }) => {
+  const handleChange = (ev) => {
+    onChange(ev.target.value);
+  };
+  return <StyledInput {...props} onChange={handleChange} />;
+};
 
 export default Input;

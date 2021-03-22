@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import Button from '../../atoms/Button';
@@ -10,13 +11,24 @@ const Wrapper = styled.div`
   max-width: 300px;
 `;
 
-const ToDoForm = ({ disabled }) => (
-  <Wrapper>
-    <Input disabled={disabled} />
-    <Button primary disabled={disabled}>
-      Add!
-    </Button>
-  </Wrapper>
-);
+const defaultValue = '';
+
+const ToDoForm = ({ disabled, onSubmit }) => {
+  const [value, setValue] = useState(defaultValue);
+
+  const handleSubmit = () => {
+    onSubmit(value);
+    setValue(defaultValue);
+  };
+
+  return (
+    <Wrapper>
+      <Input disabled={disabled} onChange={setValue} value={value} />
+      <Button primary disabled={disabled} onClick={handleSubmit}>
+        Add!
+      </Button>
+    </Wrapper>
+  );
+};
 
 export default ToDoForm;
