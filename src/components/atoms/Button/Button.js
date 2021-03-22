@@ -9,12 +9,23 @@ const StyledButton = styled.button(
     border: 1px solid blue;
     padding: 4px 8px;
     cursor: pointer;
+
+    :disabled {
+      border: 1px solid gray;
+      background-color: grey;
+      color: white;
+      cursor: auto;
+    }
 `,
 );
 
 const Button = (props) => {
-  const { primary, children } = props;
-  return <StyledButton primary={primary}>{children}</StyledButton>;
+  const { primary, children, ...otherProps } = props;
+  return (
+    <StyledButton primary={primary} {...otherProps}>
+      {children}
+    </StyledButton>
+  );
 };
 
 export default Button;

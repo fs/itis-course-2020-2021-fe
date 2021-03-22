@@ -10,10 +10,12 @@ const Wrapper = styled.div`
   max-width: 300px;
 `;
 
-const ToDoForm = () => (
+const ToDoForm = ({ disabled }) => (
   <Wrapper>
-    <Input />
-    <Button primary>Add!</Button>
+    <Input disabled={disabled} />
+    <Button primary disabled={disabled}>
+      Add!
+    </Button>
   </Wrapper>
 );
 
