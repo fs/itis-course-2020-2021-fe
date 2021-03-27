@@ -8,10 +8,15 @@ const StyledInput = styled.input`
 
   :focus {
     border: 1px solid blue;
+    outline: #61dafb 1px solid;
   }
 
   :disabled {
     border: 1px solid gray;
+  }
+
+  :active {
+    outline: #61dafb 1px solid;
   }
 `;
 
