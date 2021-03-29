@@ -17,14 +17,16 @@ const ToDoForm = ({ disabled, onSubmit }) => {
   const [value, setValue] = useState(defaultValue);
 
   const handleSubmit = () => {
-    onSubmit(value);
-    setValue(defaultValue);
+    if (value) {
+      onSubmit(value);
+      setValue(defaultValue);
+    }
   };
 
   return (
     <Wrapper>
       <Input disabled={disabled} onChange={setValue} value={value} />
-      <Button primary disabled={disabled} onClick={handleSubmit}>
+      <Button primary disabled={disabled || !value} onClick={handleSubmit}>
         Add!
       </Button>
     </Wrapper>

@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const StyledButton = styled.button(
-  ({ primary, error, outlined }) => `
+  ({ primary, error, outlined = true }) => css`
     color: ${primary ? 'white' : 'blue'};
     ${error && 'color: red'};
     background-color: ${primary ? 'blue' : 'white'};
@@ -18,8 +18,28 @@ const StyledButton = styled.button(
       color: white;
       cursor: auto;
     }
-    ${outlined && 'border: 0'};
-`,
+
+    :focus {
+      outline: #61dafb 1px solid;
+    }
+
+    :active {
+      outline: #61dafb 1px solid;
+    }
+
+    ${!outlined &&
+    css`
+      border: 0;
+
+      :focus {
+        outline: 0;
+      }
+
+      :active {
+        outline: 0;
+      }
+    `};
+  `,
 );
 
 const Button = (props) => {
