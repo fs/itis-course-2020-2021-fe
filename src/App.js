@@ -3,8 +3,6 @@ import TasksPage from './components/pages/TasksPage';
 import Home from './components/pages/Home';
 import routes from './config/routes';
 
-const initialList = [{ text: 'Позвтракать' }, { text: 'Не опаздать' }];
-
 const App = () => {
   const { HOME, TASKS } = routes;
 

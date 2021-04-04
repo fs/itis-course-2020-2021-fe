@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ToDoList from '../../molecules/ToDoList';
 import ToDoForm from '../../molecules/ToDoForm';
+import Button from '../../atoms/Button';
+import useToDo from '../../../hooks/useToDo';
 
 const Wrapper = styled.div`
   max-width: 400px;
@@ -15,13 +17,11 @@ const Title = styled.h1`
   font-size: 20px;
 `;
 
-const TasksPage = ({ initialList }) => {
+const TasksPage = () => {
+  const { list: initialList, updateList } = useToDo();
+
   const [list, setList] = useState(initialList);
   const [listUnSaved, setListUnsaved] = useState(false);
-  const onAddNewListItem = (value) => {
-    setList([...list, { text: value }]);
-  };
-  const handleRemove = (i) => setList(list.filter((elem, index) => i !== index));
 
   useEffect(() => {
     if (JSON.stringify(initialList) !== JSON.stringify(list)) {
@@ -31,16 +31,37 @@ const TasksPage = ({ initialList }) => {
     }
   }, [initialList, list, listUnSaved]);
 
+  const onAddNewListItem = (value) => {
+    setList([...list, { text: value }]);
+  };
+  const handleRemove = (i) => setList(list.filter((elem, index) => i !== index));
+
+  const onSave = () => {
+    updateList(list);
+  };
+
+  const onDismiss = () => {
+    setList(initialList);
+  };
+
+  const handleCheck = (ev, i) => {
+    const {
+      target: { checked },
+    } = ev;
+    setList((currentList) => currentList.map((listItem, index) => (i === index ? { ...listItem, checked } : listItem)));
+  };
+
   return (
     <Wrapper>
       <Title>ToDoPage</Title>
-      <ToDoList list={list} onRemove={handleRemove} />
       <ToDoForm onSubmit={onAddNewListItem} />
+      <ToDoList list={list} onRemove={handleRemove} onCheck={handleCheck} />
       {listUnSaved && (
         <div>
-          List not saved
-          {/* <Button>Dismiss</Button> */}
-          {/* <Button primary>Save</Button> */}
+          <Button onClick={onDismiss}>Dismiss</Button>
+          <Button primary onClick={onSave}>
+            Save
+          </Button>
         </div>
       )}
     </Wrapper>
