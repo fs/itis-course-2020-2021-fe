@@ -13,7 +13,7 @@ const App = () => {
           <Home />
         </Route>
         <Route exact path={TASKS}>
-          <TasksPage initialList={initialList} />
+          <TasksPage />
         </Route>
       </Switch>
     </BrowserRouter>
