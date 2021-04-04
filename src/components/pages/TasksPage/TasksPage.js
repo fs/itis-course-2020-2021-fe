@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ToDoList from '../../molecules/ToDoList';
 import ToDoForm from '../../molecules/ToDoForm';
-// import Button from '../../atoms/Button';
 
 const Wrapper = styled.div`
   max-width: 400px;
@@ -16,7 +15,7 @@ const Title = styled.h1`
   font-size: 20px;
 `;
 
-const ToDoPage = ({ initialList }) => {
+const TasksPage = ({ initialList }) => {
   const [list, setList] = useState(initialList);
   const [listUnSaved, setListUnsaved] = useState(false);
   const onAddNewListItem = (value) => {
@@ -48,4 +47,4 @@ const ToDoPage = ({ initialList }) => {
   );
 };
 
-export default ToDoPage;
+export default TasksPage;
