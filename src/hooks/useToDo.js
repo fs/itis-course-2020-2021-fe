@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const initialList = [
   { text: 'Позвтракать', checked: true },
-  { text: 'Не опаздать', checked: false },
+  { text: 'Не опоздать', checked: false },
 ];
 
 const useToDo = () => {

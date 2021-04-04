@@ -6,7 +6,6 @@ const StyledButton = styled.button(
     ${error && 'color: red'};
     background-color: ${primary ? 'blue' : 'white'};
     font-size: 16px;
-    border-radius: 2px;
     border: 1px solid blue;
     ${error && 'border: 1px solid red'};
     padding: 4px 8px;
