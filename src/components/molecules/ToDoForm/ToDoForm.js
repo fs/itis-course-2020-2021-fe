@@ -8,7 +8,6 @@ const Wrapper = styled.div`
   padding: 6px;
   display: flex;
   justify-content: space-between;
-  max-width: 300px;
 `;
 
 const defaultValue = '';

@@ -1,14 +1,11 @@
 import {Link} from 'react-router-dom';
 import routes from '../../../config/routes';
+import DefaultTemplate from '../../templates/DefaultTemplate';
 
 const Home = () => (
-  <div>
-    <p>
-      <a href={routes.TASKS}>Go to tasks with refresh</a>
-    </p>
-
-    <Link to='/tasks'>See tasks</Link>
-  </div>
+  <DefaultTemplate>
+    <Link to={routes.TASKS}>See tasks</Link>
+  </DefaultTemplate>
 );
 
 export default Home;

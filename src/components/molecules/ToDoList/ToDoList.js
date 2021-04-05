@@ -16,10 +16,10 @@ const ToDoList = (props) => {
   const { list, onRemove, onCheck } = props;
   return (
     <List>
-      {list.map((listItem, i) => (
-        <ToDoListItem key={`${i}-${listItem.text}`} checked={listItem.checked}>
-          <CheckBox onChange={(ev) => onCheck(ev, i)} checked={listItem.checked} />
-          <span>{listItem.text}</span>
+      {list.map(({ text, checked, id }, i) => (
+        <ToDoListItem key={`${i}-${text}`} checked={checked} id={id}>
+          <CheckBox onChange={(ev) => onCheck(ev, i)} checked={checked} />
+          <span>{text}</span>
           <StyledButton error outlined={false} onClick={() => onRemove(i)}>
             X
           </StyledButton>

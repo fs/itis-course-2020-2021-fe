@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import ToDoList from '../../molecules/ToDoList';
 import ToDoForm from '../../molecules/ToDoForm';
 import Button from '../../atoms/Button';
+import DefaultTemplate from '../../templates/DefaultTemplate';
 import useToDo from '../../../hooks/useToDo';
 
 const Wrapper = styled.div`
-  max-width: 400px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,19 +51,21 @@ const TasksPage = () => {
   };
 
   return (
-    <Wrapper>
-      <Title>ToDoPage</Title>
-      <ToDoForm onSubmit={onAddNewListItem} />
-      <ToDoList list={list} onRemove={handleRemove} onCheck={handleCheck} />
-      {listUnSaved && (
-        <div>
-          <Button onClick={onDismiss}>Dismiss</Button>
-          <Button primary onClick={onSave}>
-            Save
-          </Button>
-        </div>
-      )}
-    </Wrapper>
+    <DefaultTemplate>
+      <Wrapper>
+        <Title>ToDoPage</Title>
+        <ToDoForm onSubmit={onAddNewListItem} />
+        <ToDoList list={list} onRemove={handleRemove} onCheck={handleCheck} />
+        {listUnSaved && (
+          <div>
+            <Button onClick={onDismiss}>Dismiss</Button>
+            <Button primary onClick={onSave}>
+              Save
+            </Button>
+          </div>
+        )}
+      </Wrapper>
+    </DefaultTemplate>
   );
 };
 
