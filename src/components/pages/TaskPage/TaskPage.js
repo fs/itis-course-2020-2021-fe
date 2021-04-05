@@ -6,13 +6,13 @@ import DefaultTemplate from '../../templates/DefaultTemplate';
 const TaskPage = () => {
   const { id: queryId } = useParams();
 
-  const todo = todos.find(({id}) => id === +queryId);
+  const todo = todos.find(({ id }) => id === +queryId);
 
   return (
     <DefaultTemplate>
       <Task todo={todo} />
     </DefaultTemplate>
-  )
+  );
 };
 
 export default TaskPage;

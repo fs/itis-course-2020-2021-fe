@@ -10,13 +10,13 @@ const Title = styled.h1`
 `;
 
 const Task = ({ todo }) => {
-  const {text} = todo;
+  const { text } = todo;
 
   return (
     <TaskCard>
       <Title>{text}</Title>
     </TaskCard>
   );
-}
+};
 
 export default Task;
