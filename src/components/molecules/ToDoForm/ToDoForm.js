@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Button from '../../atoms/Button';
 import Input from '../../atoms/Input';
 
-const Wrapper = styled.div`
+const Form = styled.form`
   padding: 6px;
   display: flex;
   justify-content: space-between;
@@ -23,12 +23,12 @@ const ToDoForm = ({ disabled, onSubmit }) => {
   };
 
   return (
-    <Wrapper>
+    <Form>
       <Input disabled={disabled} onChange={setValue} value={value} />
       <Button primary disabled={disabled || !value} onClick={handleSubmit}>
         Add!
       </Button>
-    </Wrapper>
+    </Form>
   );
 };
 
