@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 const StyledListItem = styled.li(
   ({ checked }) => `
@@ -15,10 +14,6 @@ const StyledListItem = styled.li(
 `,
 );
 
-const ToDoListItem = ({ checked, id, children }) => (
-  <StyledListItem checked={checked}>
-    <Link to={`tasks/${id}`}>{children}</Link>
-  </StyledListItem>
-);
+const ToDoListItem = ({ checked, children }) => <StyledListItem checked={checked}>{children}</StyledListItem>;
 
 export default ToDoListItem;
