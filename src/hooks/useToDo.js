@@ -1,12 +1,8 @@
 import { useState } from 'react';
-
-const initialList = [
-  { text: 'Позвтракать', checked: true },
-  { text: 'Не опаздать', checked: false },
-];
+import todos from '../data/todos';
 
 const useToDo = () => {
-  const [list, setList] = useState(initialList);
+  const [list, setList] = useState(todos);
 
   return { list, updateList: setList };
 };
