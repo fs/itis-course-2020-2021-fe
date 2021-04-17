@@ -4,7 +4,13 @@ import DefaultTemplate from '../../templates/DefaultTemplate';
 
 const Home = () => (
   <DefaultTemplate>
-    <Link to={routes.TASKS}>See tasks</Link>
+    <p>
+      <Link to={routes.TASKS}>See tasks</Link>
+    </p>
+
+    <p>
+      <Link to={routes.TASKS_WITH_GRAPHQL}>See tasks with GraphQL</Link>
+    </p>
   </DefaultTemplate>
 );
 
