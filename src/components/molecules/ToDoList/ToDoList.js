@@ -23,7 +23,7 @@ const ToDoList = (props) => {
           <Link to={`tasks/${id}`}>
             <span>{title}</span>
           </Link>
-          <StyledButton error outlined={false} onClick={() => onRemove(i)}>
+          <StyledButton error outlined={false} onClick={() => onRemove(id)}>
             X
           </StyledButton>
         </ToDoListItem>

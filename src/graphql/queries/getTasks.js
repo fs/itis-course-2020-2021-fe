@@ -1,11 +1,11 @@
 import { gql } from '@apollo/client';
+import task from '../fragments/task';
 
 export default gql`
   query getTasks {
     tasks {
-      id
-      title
-      createdAt
+      ...TaskFragment
     }
   }
+  ${task}
 `;
