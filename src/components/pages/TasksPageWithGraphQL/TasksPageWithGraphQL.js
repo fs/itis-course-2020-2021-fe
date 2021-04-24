@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import DefaultTemplate from '../../templates/DefaultTemplate';
-import ToDoList from '../../molecules/ToDoList';
 import useTasks from '../../../hooks/useTasks';
+import ToDoForm from '../../molecules/ToDoForm';
+import useCreateTask from '../../../hooks/useCreateTask';
+import TasksList from '../../molecules/TasksList';
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,12 +17,18 @@ const Title = styled.h1`
 
 const TasksPageWithGraphQL = () => {
   const { tasks, loading } = useTasks();
+  const { createTask } = useCreateTask();
+
+  const onAddTask = async (value) => {
+    await createTask(value);
+  };
 
   return (
     <DefaultTemplate loading={loading}>
       <Wrapper>
         <Title>ToDoPage with GraphQL</Title>
-        <ToDoList list={tasks} />
+        <ToDoForm onSubmit={onAddTask} />
+        <TasksList list={tasks} />
       </Wrapper>
     </DefaultTemplate>
   );
