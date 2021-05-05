@@ -1,9 +1,10 @@
 {
-  "presets": ["@babel/preset-react"],
+  "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]],
   "plugins": [
     ["styled-components"],
     ["@babel/plugin-syntax-jsx"],
     ["module-resolver", { "root": ["./"] }],
+    "@babel/plugin-syntax-jsx",
     "inline-react-svg"
   ]
 }
