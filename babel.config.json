@@ -4,7 +4,14 @@
     ["styled-components"],
     ["@babel/plugin-syntax-jsx"],
     ["module-resolver", { "root": ["./"] }],
-    "@babel/plugin-syntax-jsx",
     "inline-react-svg"
-  ]
+  ],
+
+  "env": {
+    "test": {
+      "presets": ["@babel/preset-env", "@babel/preset-react"],
+      "plugins": ["transform-export-extensions"],
+      "only": ["./**/*.js", "node_modules/jest-runtime"]
+    }
+  }
 }
