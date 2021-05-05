@@ -9,7 +9,7 @@
 
   "env": {
     "test": {
-      "presets": ["@babel/preset-env", "@babel/preset-react"],
+      "presets": ["@babel/preset-env", ["@babel/preset-react", { "runtime": "automatic" }]],
       "plugins": ["transform-export-extensions"],
       "only": ["./**/*.js", "node_modules/jest-runtime"]
     }
