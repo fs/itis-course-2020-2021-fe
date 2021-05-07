@@ -26,8 +26,7 @@
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
-    "test": "react-scripts test",
-    "test:jest": "jest --watch",
+    "test": "jest --watch",
     "test:ci": "jest",
     "scan": "yarn lint && yarn test:ci"
   },

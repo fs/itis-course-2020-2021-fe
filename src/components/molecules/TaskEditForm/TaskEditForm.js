@@ -9,13 +9,14 @@ const TaskEditForm = ({ task, onEditComplete }) => {
 
   const [taskValue, setTaskValue] = useState(title);
 
-  const onSubmit = async (event) => {
+  // todo: return async (solve in test)
+  const onSubmit = (event) => {
     event.preventDefault();
-    await updateTask({ title: taskValue, id });
+    updateTask({ title: taskValue, id });
     onEditComplete();
   };
 
-  const onChange = value => {
+  const onChange = (value) => {
     setTaskValue(value);
   };
 
@@ -25,9 +26,7 @@ const TaskEditForm = ({ task, onEditComplete }) => {
       <Button type="submit" onClick={onSubmit}>
         Save
       </Button>
-      <Button onClick={onEditComplete}>
-        Cancel
-      </Button>
+      <Button onClick={onEditComplete}>Cancel</Button>
     </form>
   );
 };

@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Task Should render correctly 1`] = `
+<div>
+  <div
+    class="Task__TaskCard-sc-1cphhge-0 jTEsJu"
+  >
+    <div
+      class="Task__Actions-sc-1cphhge-2 hgtdXE"
+    >
+      <button
+        class="Task__Edit-sc-1cphhge-4 iisIEY"
+        data-testid="test-task-edit-button"
+      >
+        Edit
+      </button>
+      <button
+        class="Button__StyledButton-sc-1wq17d6-0 bnkCGM Task__StyledButton-sc-1cphhge-3 ivia-d"
+      >
+        X
+      </button>
+    </div>
+    <link
+      to="tasks/999"
+    >
+      <h1
+        class="Task__Title-sc-1cphhge-1 iokueI"
+      >
+        Tack title
+      </h1>
+    </link>
+  </div>
+</div>
+`;
+
+exports[`Task Should render when click to edit 1`] = `
+<div>
+  <div
+    class="Task__TaskCard-sc-1cphhge-0 jTEsJu"
+  >
+    <div
+      class="Task__Actions-sc-1cphhge-2 hgtdXE"
+    >
+      <button
+        class="Task__Edit-sc-1cphhge-4 iisIEY"
+        data-testid="test-task-edit-button"
+      >
+        Edit
+      </button>
+      <button
+        class="Button__StyledButton-sc-1wq17d6-0 bnkCGM Task__StyledButton-sc-1cphhge-3 ivia-d"
+      >
+        X
+      </button>
+    </div>
+    <form>
+      <input
+        class="Input__StyledInput-gwtfa-0 bBElsQ"
+        value="Tack title"
+      />
+      <button
+        class="Button__StyledButton-sc-1wq17d6-0 jTfwWo"
+        type="submit"
+      >
+        Save
+      </button>
+      <button
+        class="Button__StyledButton-sc-1wq17d6-0 jTfwWo"
+      >
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>
+`;
