@@ -9,10 +9,9 @@ const TaskEditForm = ({ task, onEditComplete }) => {
 
   const [taskValue, setTaskValue] = useState(title);
 
-  // todo: return async (solve in test)
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
-    updateTask({ title: taskValue, id });
+    await updateTask({ title: taskValue, id });
     onEditComplete();
   };
 
