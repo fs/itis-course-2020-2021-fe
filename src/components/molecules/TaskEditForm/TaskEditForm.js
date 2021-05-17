@@ -21,7 +21,7 @@ const TaskEditForm = ({ task, onEditComplete }) => {
 
   return (
     <form>
-      <Input onChange={onChange} value={taskValue} />
+      <Input data-testid="task-edit-input" onChange={onChange} value={taskValue} />
       <Button type="submit" onClick={onSubmit}>
         Save
       </Button>

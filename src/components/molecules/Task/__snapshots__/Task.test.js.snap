@@ -56,6 +56,7 @@ exports[`Task Should render when click to edit 1`] = `
     <form>
       <input
         class="Input__StyledInput-gwtfa-0 bBElsQ"
+        data-testid="task-edit-input"
         value="Tack title"
       />
       <button
