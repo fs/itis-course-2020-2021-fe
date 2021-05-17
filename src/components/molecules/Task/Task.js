@@ -38,8 +38,9 @@ const Task = ({ todo }) => {
 
   const [isTaskEdited, setIsTaskEdited] = useState(false);
 
-  const onRemove = async () => {
-    await removeTask(id);
+  // todo: return async (solve in test)
+  const onRemove = () => {
+    removeTask(id);
   };
 
   const onEditComplete = () => {
@@ -49,14 +50,16 @@ const Task = ({ todo }) => {
   return (
     <TaskCard>
       <Actions>
-        <Edit onClick={() => setIsTaskEdited(true) }>Edit</Edit>
+        <Edit onClick={() => setIsTaskEdited(true)} data-testid="test-task-edit-button">
+          Edit
+        </Edit>
         <StyledButton error outlined={false} onClick={onRemove}>
           X
         </StyledButton>
       </Actions>
 
       {isTaskEdited ? (
-        <TaskEditForm task={todo} onEditComplete={onEditComplete} />
+        <TaskEditForm data-testid="test-task-edit-form" task={todo} onEditComplete={onEditComplete} />
       ) : (
         <Link to={`tasks/${id}`}>
           <Title>{title}</Title>

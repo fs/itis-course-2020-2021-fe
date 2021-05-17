@@ -15,7 +15,7 @@ const TaskEditForm = ({ task, onEditComplete }) => {
     onEditComplete();
   };
 
-  const onChange = value => {
+  const onChange = (value) => {
     setTaskValue(value);
   };
 
@@ -25,9 +25,7 @@ const TaskEditForm = ({ task, onEditComplete }) => {
       <Button type="submit" onClick={onSubmit}>
         Save
       </Button>
-      <Button onClick={onEditComplete}>
-        Cancel
-      </Button>
+      <Button onClick={onEditComplete}>Cancel</Button>
     </form>
   );
 };

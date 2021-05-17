@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Should not call function onClick on disabled button 1`] = `
+<button
+  class="Button__StyledButton-sc-1wq17d6-0 jTfwWo"
+  disabled=""
+>
+  Click
+</button>
+`;
